@@ -9,14 +9,15 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
+    env:
+      AWS_REGION: us-east-1
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       # Step to build and push Docker image to ECR
       - name: Build and push Docker image
-        env:
-          AWS_REGION: us-east-1  # Specify your AWS region
         run: |
           # Login to Amazon ECR
           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
