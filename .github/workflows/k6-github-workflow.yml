@@ -1,4 +1,4 @@
-name: Run k6 test in fargate
+name: K6 Load Test on AWS Fargate
 
 on:
   push:
@@ -6,44 +6,28 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  load_test_us_east_1:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Login to Amazon ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
+      - name: Login to AWS ECR (us-east-1)
+        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: ${{ steps.login-ecr.outputs.registry }}/k6-test-repo:latest-k6-amd64
+      - name: Run k6 Load Test in us-east-1
+        run: |
+          aws ecs run-task --cluster k6-cluster --task-definition arn:aws:ecs:us-east-1:381491835787:task-definition/k6-fargate-task-definition:3 --launch-type FARGATE --region us-east-1
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+  load_test_us_east_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run Fargate task in us-east-1
-      run: |
-        aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
-        aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
+      - name: Login to AWS ECR (us-east-2)
+        run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2
-
-    - name: Run Fargate task in us-east-2
-      run: |
-        aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
-        aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
+      - name: Run k6 Load Test in us-east-2
+        run: |
+          aws ecs run-task --cluster k6-cluster1 --task-definition arn:aws:ecs:us-east-2:381491835787:task-definition/k6-fargate-task-definition2:1 --launch-type FARGATE --region us-east-2
