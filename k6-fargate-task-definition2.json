@@ -1,0 +1,34 @@
+{
+    "family": "k6-fargate-task-definition2",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::381491835787:role/aws-fargate-role",
+    "containerDefinitions": [
+      {
+        "name": "k6-fargate-container2",
+        "image": "381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64",
+        "cpu": 256,
+        "memory": 512,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 80,
+            "hostPort": 80,
+            "protocol": "tcp"
+          }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "k6-fargate-task-log",
+                "awslogs-region": "us-east-2",
+                "awslogs-stream-prefix": "ecs"
+            }
+        }
+      }
+    ],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+  }

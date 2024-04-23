@@ -33,8 +33,8 @@ jobs:
 
     - name: Run Fargate task in us-east-1
       run: |
-        aws ecs register-task-definition --cli-input-json file://task-definition.json
-        aws ecs run-task --cluster my-cluster --task-definition my-k6-test --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-0abcdef1234567890],securityGroups=[sg-0abcdef1234567890],assignPublicIp=ENABLED}"
+        aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
+        aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -45,5 +45,5 @@ jobs:
 
     - name: Run Fargate task in us-east-2
       run: |
-        aws ecs register-task-definition --cli-input-json file://task-definition.json
-        aws ecs run-task --cluster my-cluster --task-definition my-k6-test --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-0abcdef1234567890],securityGroups=[sg-0abcdef1234567890],assignPublicIp=ENABLED}"
+        aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
+        aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
