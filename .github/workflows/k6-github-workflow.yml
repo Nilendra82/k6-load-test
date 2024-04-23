@@ -26,10 +26,10 @@ jobs:
           docker build -t k6-amd64-image .
 
           # Tag the Docker image for ECR
-          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
+          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
 
           # Push the Docker image to Amazon ECR
-          docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
+          docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
