@@ -1,4 +1,4 @@
-name: Run k6 test
+name: Run k6 test in fargate
 
 on:
   push:
