@@ -6,9 +6,31 @@ on:
       - main
 
 jobs:
-  run_tests:
+  build_and_push:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      - name: Login to Amazon ECR (us-east-1)
+        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
+
+      - name: Build and push Docker image (us-east-1)
+        run: |
+          docker build -t 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64 .
+          docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
+      
+      - name: Login to Amazon ECR (us-east-2)
+        run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo
+
+      - name: Build and push Docker image (us-east-2)
+        run: |
+          docker build -t 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64 .
+          docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
+
+  run_tests:
+    needs: build_and_push
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -19,9 +41,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
-      - name: Login to Amazon ECR
-        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
 
       - name: Run Fargate task in us-east-1
         run: |
@@ -35,7 +54,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: Login to Amazon ECR
+      - name: Login to Amazon ECR (us-east-2)
         run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo
 
       - name: Run Fargate task in us-east-2
