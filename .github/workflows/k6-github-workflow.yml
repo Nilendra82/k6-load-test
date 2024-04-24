@@ -108,7 +108,7 @@ jobs:
       - name: Generate k6 Report for us-east-1
         run: |
           aws logs get-log-events \
-          --log-group-name k6-fargate-task-log \
+          --log-group-name k6-fargate-task-log --log-stream-name ecs/k6-fargate-container2 \
           --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
