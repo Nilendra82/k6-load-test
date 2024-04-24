@@ -62,10 +62,9 @@ jobs:
           # Push the Docker image to Amazon ECR
           docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
 
-  run_k6_tests_parallel:
+  run_k6_tests_us_east_1:
     needs:
       - build_and_push_docker_image_us_east_1
-      - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -83,6 +82,14 @@ jobs:
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
           aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
 
+  run_k6tests_us_east_2:
+    needs:
+      - build_and_push_docker_image_us_east_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -90,13 +97,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: Login to Amazon ECR (us-east-2)
-        run: aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo
-
       - name: Run Fargate task in us-east-2
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
-          aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
+          aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"  
   
   generate_reports:
     needs: run_k6_tests_parallel
