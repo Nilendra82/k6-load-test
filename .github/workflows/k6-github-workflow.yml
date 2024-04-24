@@ -126,6 +126,6 @@ jobs:
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
 
-          k6 report -o us-east-1-k6-report.html us-east-1-k6-logs.json
+          k6 run script.js --out json=us-east-1-k6-logs.json
 
   
