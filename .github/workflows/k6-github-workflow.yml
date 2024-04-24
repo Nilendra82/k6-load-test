@@ -81,8 +81,8 @@ jobs:
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
           task_info=$(aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
-          echo "::set-output name=task_id::$task_info"
-          echo "Task ID: ${{ steps.run_ecs_task.outputs.task_id }}"
+          echo "task_id=$task_info" >> $GITHUB_ENV
+          echo "Task ID: $task_info"
 
   run_k6_tests_us_east_2:
     needs:
