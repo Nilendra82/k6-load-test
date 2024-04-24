@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_and_push_us_east_1:
+  Push latest docker image to us-east-1:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +34,7 @@ jobs:
           # Push the Docker image to Amazon ECR
           docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
 
-  build_and_push_us_east_2:
+  Push latest docker image to us-east-2:
     runs-on: ubuntu-latest
 
     steps:
@@ -62,10 +62,10 @@ jobs:
           # Push the Docker image to Amazon ECR
           docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
 
-  run_tests:
+  Run k6 script parallel:
     needs:
-      - build_and_push_us_east_1
-      - build_and_push_us_east_2
+      - Push latest docker image to us-east-1
+      - Push latest docker image to us-east-2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
