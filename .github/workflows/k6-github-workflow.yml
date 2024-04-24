@@ -105,9 +105,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Debug Log Stream Name
-        run: echo "Log Stream Name: ${{ secrets.LOG_STREAM_NAME }}"
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -118,7 +115,7 @@ jobs:
       - name: Generate k6 Report for us-east-1
         run: |
           aws logs get-log-events \
-          --log-group-name k6-fargate-task-log --log-stream-name ${{ secrets.LOG_STREAM_NAME }} \
+          --log-group-name k6-fargate-task-log \ --log-stream-name ecs/k6-fargate-container/46e3555a6d5f440eb7bbe73e88ff1b23 \
           --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
