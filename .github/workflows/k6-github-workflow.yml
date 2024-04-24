@@ -64,8 +64,8 @@ jobs:
 
   run_k6_tests_parallel:
     needs:
-      - build_and_push_us_east_1
-      - build_and_push_us_east_2
+      - build_and_push_docker_image_us_east_1
+      - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
