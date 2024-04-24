@@ -84,8 +84,15 @@ jobs:
           task_info=$(aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
           echo "task_id=$task_info" >> $GITHUB_ENV
           echo "Task ID: $task_info"
-        outputs:
+          echo "task_id=$task_info" >> ./us_east_1.env
+        env:
           task_id: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}
+
+      - name: Store environment variables in a file for us-east-1
+        run: |
+          echo "TASK_ID=${{ env.task_id }}" >> ./us_east_1.env
+          echo "TASK_REGION=us-east-1" >> ./us_east_1.env
+        shell: bash
 
   run_k6_tests_us_east_2:
     needs:
@@ -109,8 +116,15 @@ jobs:
           task_info=$(aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
           echo "task_id=$task_info" >> $GITHUB_ENV
           echo "Task ID: $task_info"
-        outputs:
+          echo "task_id=$task_info" >> ./us_east_2.env
+        env:
           task_id: ${{ steps.run_ecs_task_us_east_2.outputs.task_id }}
+
+      - name: Store environment variables in a file for us-east-2
+        run: |
+          echo "TASK_ID=${{ env.task_id }}" >> ./us_east_2.env
+          echo "TASK_REGION=us-east-2" >> ./us_east_2.env
+        shell: bash
 
   generate_reports:
     needs: 
@@ -145,15 +159,16 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
+          source ./us_east_1.env
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name ${{ secrets.log_stream_name_us_east_1 }} \
-          --region us-east-1 \
+          --region $TASK_REGION \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
         env:
-          task_id: ${{ needs.run_k6_tests_us_east_1.outputs.task_id }}
+          TASK_REGION: us-east-1
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
@@ -173,16 +188,16 @@ jobs:
 
       - name: Generate k6 Report for us-east-2
         run: |
+          source ./us_east_2.env
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name ${{ secrets.log_stream_name_us_east_2 }} \
-          --region us-east-2 \
+          --region $TASK_REGION \
           --output json > us-east-2-log-events.json
           cat us-east-2-log-events.json | jq -r '.events[].message' > us-east-2-k6-logs.json
-
           k6 run scripts/k6-script.js --out json=us-east-2-k6-logs.json
         env:
-          task_id: ${{ needs.run_k6_tests_us_east_2.outputs.task_id }}
+          TASK_REGION: us-east-2
 
       - name: Upload k6 logs artifact for us-east-2
         uses: actions/upload-artifact@v2
