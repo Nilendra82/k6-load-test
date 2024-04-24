@@ -107,16 +107,12 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
-          # Retrieve logs from CloudWatch Logs for a specific log group in us-east-1 region
-aws logs get-log-events \
-    --log-group-name k6-fargate-task-log \
-    --region us-east-1 \
-    --output json > us-east-1-log-events.json
+          aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --region us-east-1 \
+          --output json > us-east-1-log-events.json
+          cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
 
-# Extract k6 JSON data from the log events
-cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
-
-# Generate k6 report from the extracted logs using k6's built-in JSON output
-k6 report -o us-east-1-k6-report.html us-east-1-k6-logs.json
+          k6 report -o us-east-1-k6-report.html us-east-1-k6-logs.json
 
   
