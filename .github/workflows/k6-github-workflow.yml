@@ -131,6 +131,23 @@ jobs:
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
         with:
-          name: k6-logs
+          name: k6-us-east-1-logs
           path: us-east-1-k6-logs.json
+
+      - name: Generate k6 Report for us-east-2
+        run: |
+          aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --log-stream-name ecs/k6-fargate-container2/7dad1b8694834122879d3f1334f7aae3 \
+          --region us-east-2 \
+          --output json > us-east-2-log-events.json
+          cat us-east-2-log-events.json | jq -r '.events[].message' > us-east-2-k6-logs.json
+
+          k6 run scripts/k6-script.js --out json=us-east-2-k6-logs.json
+
+      - name: Upload k6 logs artifact for us-east-2
+        uses: actions/upload-artifact@v2
+        with:
+          name: k6-us-east-2-logs
+          path: us-east-2-k6-logs.json
 
