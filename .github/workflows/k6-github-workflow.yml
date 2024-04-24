@@ -97,3 +97,26 @@ jobs:
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
           aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
+  
+  generate_reports:
+    needs: run_k6_tests_parallel_report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate k6 Report for us-east-1
+        run: |
+          # Retrieve logs from CloudWatch Logs for a specific log group in us-east-1 region
+aws logs get-log-events \
+    --log-group-name k6-fargate-task-log \
+    --region us-east-1 \
+    --output json > us-east-1-log-events.json
+
+# Extract k6 JSON data from the log events
+cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
+
+# Generate k6 report from the extracted logs using k6's built-in JSON output
+k6 report -o us-east-1-k6-report.html us-east-1-k6-logs.json
+
+  
