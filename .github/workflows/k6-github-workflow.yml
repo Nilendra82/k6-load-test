@@ -112,11 +112,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Debug Log Stream Name
-        run: echo "Log Stream Name: ${{ secrets.LOG_STREAM_NAME }}"
-
       - name: Generate k6 Report for us-east-1
-        run: |
+        run: echo "Log Stream Name: ${{ secrets.LOG_STREAM_NAME }}" |
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log --log-stream-name ${{ secrets.LOG_STREAM_NAME }} \
           --region us-east-1 \
