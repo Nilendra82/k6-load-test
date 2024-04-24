@@ -99,7 +99,7 @@ jobs:
           aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
   
   generate_reports:
-    needs: run_k6_tests_parallel_report
+    needs: run_k6_tests_parallel
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
