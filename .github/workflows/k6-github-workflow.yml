@@ -4,39 +4,10 @@ on:
   push:
     branches:
       - main
-
+     
 jobs:
-  build_and_push_docker_image_us_east_1:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Configure AWS credentials (us-east-1)
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
-      - name: Login to Amazon ECR (us-east-1)
-        run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
-
-      - name: Build and push Docker image (us-east-1)
-        run: |
-          # Build the Docker image
-          docker build -t k6-amd64-image .
-
-          # Tag the Docker image for ECR
-          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
-
-          # Push the Docker image to Amazon ECR
-          docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
 
   run_k6_tests_us_east_1:
-    needs:
-      - build_and_push_docker_image_us_east_1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -53,15 +24,7 @@ jobs:
         id: run_ecs_task_us_east_1
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
-          task_info=$(aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
-          echo "task_id=$task_info" >> $GITHUB_ENV
-          echo "Task ID: $task_info"
-          echo "task_id=$task_info" >> ./us_east_1.env
-        env:
-          task_id: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}
-
-      - name: Set output for task_id for us-east-1
-        run: echo "::set-output name=task_id::${{ steps.run_ecs_task_us_east_1.outputs.task_id }}"
+          aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
 
   generate_reports:
     needs: 
@@ -83,30 +46,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Get Log Stream Name for us-east-1
-        run: |
-          echo "Task ID: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}"
-
-          log_stream_name=$(aws ecs describe-tasks --cluster k6-cluster --tasks ${{ steps.run_ecs_task_us_east_1.outputs.task_id }} --query "tasks[0].containers[0].logStreamName" --output text)
-
-          # Output the log stream name for debugging
-          echo "Log Stream Name: $log_stream_name"
-
-          # Store the log stream name as a GitHub repository secret
-          echo "::set-secret name=log_stream_name_us_east_1::$log_stream_name"
-
       - name: Generate k6 Report for us-east-1
         run: |
-          source ./us_east_1.env
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
-          --log-stream-name ${{ secrets.log_stream_name_us_east_1 }} \
-          --region $TASK_REGION \
+          --log-stream-name ecs/k6-fargate-container/3ba6c0427d314e54b532485a8cd9c671 \
+          --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
-        env:
-          TASK_REGION: us-east-1
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
