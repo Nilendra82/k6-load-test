@@ -50,7 +50,7 @@ jobs:
         run: |
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
-          --log-stream-name ecs/k6-fargate-container2/4006f17da6e74f01881dd29eb956ef27 \
+          --log-stream-name ecs/k6-fargate-container/39dd455f7b0f42b2b6763d2d1ee6f811 \
           --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
