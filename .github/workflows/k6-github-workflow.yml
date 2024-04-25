@@ -63,9 +63,10 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
+          log_stream_name="${{ steps.get_log_stream_name_us_east_1.outputs.log_stream_name }}"
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
-          --log-stream-name ${{ steps.get_log_stream_name_us_east_1.outputs.log_stream_name }} \
+          --log-stream-name "$log_stream_name" \
           --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
