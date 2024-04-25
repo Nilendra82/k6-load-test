@@ -2,7 +2,7 @@ name: Run k6 test in Fargate
 
 on:
   push:
-    branches:
+    branches:2
       - main
 
 jobs:
@@ -65,6 +65,7 @@ jobs:
   run_k6_tests_us_east_1:
     needs:
       - build_and_push_docker_image_us_east_1
+      - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -96,6 +97,7 @@ jobs:
 
   run_k6_tests_us_east_2:
     needs:
+      - build_and_push_docker_image_us_east_1
       - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
     steps:
