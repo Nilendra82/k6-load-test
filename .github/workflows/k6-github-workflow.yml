@@ -2,7 +2,7 @@ name: Run k6 test in Fargate
 
 on:
   push:
-    branches:2
+    branches:
       - main
 
 jobs:
