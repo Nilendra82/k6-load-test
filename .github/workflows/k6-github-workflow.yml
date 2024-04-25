@@ -87,7 +87,7 @@ jobs:
           echo "Task ID: $task_info"
           echo "task_id=$task_info" >> ./us_east_1.env
         env:
-          task_id: ${{ steps.run_ecs_task.outputs.task_id }}
+          task_id: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}
 
       - name: Store environment variables in a file for us-east-1
         run: |
