@@ -79,7 +79,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Run Fargate task in us-east-1
-        id: run_ecs_task
+        id: run_ecs_task_us_east_1
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition.json
           task_info=$(aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
@@ -87,7 +87,7 @@ jobs:
           echo "Task ID: $task_info"
           echo "task_id=$task_info" >> ./us_east_1.env
         env:
-          task_id: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}
+          task_id: ${{ steps.run_ecs_task.outputs.task_id }}
 
       - name: Store environment variables in a file for us-east-1
         run: |
@@ -151,11 +151,7 @@ jobs:
 
       - name: Get Log Stream Name for us-east-1
         run: |
-          source ./us_east_1.env
-
           echo "Task ID: ${{ env.task_id }}"
-          
-          echo "Task ID2: $TASK_ID"
 
           log_stream_name=$(aws ecs describe-tasks --cluster k6-cluster --tasks ${{ env.task_id }} --query "tasks[0].containers[0].logStreamName" --output text)
 
