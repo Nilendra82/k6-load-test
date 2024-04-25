@@ -89,11 +89,8 @@ jobs:
         env:
           task_id: ${{ steps.run_ecs_task_us_east_1.outputs.task_id }}
 
-      - name: Store environment variables in a file for us-east-1
-        run: |
-          echo "TASK_ID=${{ env.task_id }}" >> ./us_east_1.env
-          echo "TASK_REGION=us-east-1" >> ./us_east_1.env
-        shell: bash
+      - name: Set output for task_id for us-east-1
+        run: echo "::set-output name=task_id::${{ steps.run_ecs_task_us_east_1.outputs.task_id }}"
 
   run_k6_tests_us_east_2:
     needs:
@@ -112,7 +109,7 @@ jobs:
           aws-region: us-east-2
 
       - name: Run Fargate task in us-east-2
-        id: run_ecs_task
+        id: run_ecs_task_us_east_2
         run: |
           aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
           task_info=$(aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}" --query 'tasks[0].taskArn' --output text)
@@ -122,11 +119,8 @@ jobs:
         env:
           task_id: ${{ steps.run_ecs_task_us_east_2.outputs.task_id }}
 
-      - name: Store environment variables in a file for us-east-2
-        run: |
-          echo "TASK_ID=${{ env.task_id }}" >> ./us_east_2.env
-          echo "TASK_REGION=us-east-2" >> ./us_east_2.env
-        shell: bash
+      - name: Set output for task_id for us-east-2
+        run: echo "::set-output name=task_id::${{ steps.run_ecs_task_us_east_2.outputs.task_id }}"
 
   generate_reports:
     needs: 
@@ -151,7 +145,7 @@ jobs:
 
       - name: Get Log Stream Name for us-east-1
         run: |
-          echo "Task ID: ${{ env.task_id }}"
+          echo "Task ID: ${{ needs.run_k6_tests_us_east_1.outputs.task_id }}"
 
           log_stream_name=$(aws ecs describe-tasks --cluster k6-cluster --tasks ${{ env.task_id }} --query "tasks[0].containers[0].logStreamName" --output text)
 
