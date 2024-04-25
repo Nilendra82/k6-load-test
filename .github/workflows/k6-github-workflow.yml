@@ -151,8 +151,12 @@ jobs:
 
       - name: Get Log Stream Name for us-east-1
         run: |
+          source ./us_east_1.env
+
           echo "Task ID: ${{ env.task_id }}"
           
+          echo "Task ID2: $TASK_ID"
+
           log_stream_name=$(aws ecs describe-tasks --cluster k6-cluster --tasks ${{ env.task_id }} --query "tasks[0].containers[0].logStreamName" --output text)
 
           # Output the log stream name for debugging
