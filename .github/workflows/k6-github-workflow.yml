@@ -73,8 +73,8 @@ jobs:
           echo "::set-output name=log_event::$(jq -r '.events[0].timestamp' log_events.json)"
 
       - name: Print Log Timestamp
-        run: echo "Log Timestamp: ${{ steps.get_log_events.outputs.log_event }}"
-
+        run: "Timestamp: ${{ steps.get_log_events.outputs.log_event }}"
+ 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
         with:
