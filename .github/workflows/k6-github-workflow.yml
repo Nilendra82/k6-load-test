@@ -54,10 +54,10 @@ jobs:
       - name: Build and push Docker image (us-east-2)
         run: |
           # Build the Docker image
-          docker build -t load-k6-amd64-image -f Dockerfile2 .
+          docker build -t k6-amd64-image .
 
           # Tag the Docker image for ECR
-          docker tag load-k6-amd64-image:latest 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
+          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
 
           # Push the Docker image to Amazon ECR
           docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
@@ -67,6 +67,9 @@ jobs:
       - build_and_push_docker_image_us_east_1
       - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
+    env:
+      US_EAST_1_VUS: 30
+      US_EAST_2_VUS: 70
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -90,6 +93,9 @@ jobs:
       - build_and_push_docker_image_us_east_1
       - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
+    env:
+      US_EAST_1_VUS: 30
+      US_EAST_2_VUS: 70
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -233,7 +239,7 @@ jobs:
           --log-stream-name "$LATEST_STREAM_NAME" \
           --output json > us-east-2-log-events.json
           cat us-east-2-log-events.json | jq -r '.events[].message' > us-east-2-k6-logs.json
-          k6 run scripts/k6-script2.js --out json=us-east-2-k6-logs.json
+          k6 run scripts/k6-script.js --out json=us-east-2-k6-logs.json
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
