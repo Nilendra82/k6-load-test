@@ -92,6 +92,8 @@ jobs:
           --output json \
           --region us-east-1 | jq -r '.events[0].timestamp')
           echo "Timestamp: $timestamp"
+          formatted_date=$(date -d "@$((timestamp / 1000))" +"%Y-%m-%d %H:%M:%S")
+          echo "Formatted Date: $formatted_date"
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
