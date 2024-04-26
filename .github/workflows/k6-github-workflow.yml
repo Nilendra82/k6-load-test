@@ -67,9 +67,6 @@ jobs:
       - build_and_push_docker_image_us_east_1
       - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
-    env:
-      US_EAST_1_VUS: 30
-      US_EAST_2_VUS: 70
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -93,9 +90,6 @@ jobs:
       - build_and_push_docker_image_us_east_1
       - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
-    env:
-      US_EAST_1_VUS: 30
-      US_EAST_2_VUS: 70
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
