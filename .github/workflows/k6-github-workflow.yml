@@ -91,10 +91,6 @@ jobs:
                   {
                     "name": "US_EAST_1_VUS",
                     "value": "30"
-                  },
-                  {
-                    "name": "US_EAST_2_VUS",
-                    "value": "70"
                   }
                 ]
               }
@@ -127,10 +123,6 @@ jobs:
               {
                 "name": "k6-fargate-container2",
                 "environment": [
-                  {
-                    "name": "US_EAST_1_VUS",
-                    "value": "30"
-                  },
                   {
                     "name": "US_EAST_2_VUS",
                     "value": "70"
