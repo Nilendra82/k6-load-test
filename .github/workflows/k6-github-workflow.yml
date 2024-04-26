@@ -71,7 +71,9 @@ jobs:
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
           echo "::set-output name=log_event::$(jq -r '.events[0].timestamp' log_events.json)"
-          echo "Log Timestamp: ${{ steps.get_log_events.outputs.log_event }}"
+
+      - name: Print Log Timestamp
+        run: echo "Log Timestamp: ${{ steps.get_log_events.outputs.log_event }}"
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
