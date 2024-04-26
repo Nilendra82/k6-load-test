@@ -48,13 +48,13 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
-          latest_stream_name=$(aws logs describe-log-streams \                                                                                             INT ✘
-          --log-group-name k6-fargate-task-log \
-          --order-by LastEventTime \
-          --descending \
-          --max-items 1 \
-          --query 'logStreams[0].logStreamName' \
-          --output text --region us-east-1)
+          latest_stream_name=$(aws logs describe-log-streams \
+    --log-group-name k6-fargate-task-log \
+    --order-by LastEventTime \
+    --descending \
+    --max-items 1 \
+    --query 'logStreams[0].logStreamName' \
+    --output text --region us-east-1)
           
           # Print the latest log stream name
           echo "Latest log stream name: $latest_stream_name"
