@@ -62,9 +62,11 @@ jobs:
           # Store the latest log stream name in a variable
           export LATEST_STREAM_NAME="$latest_stream_name"
 
+          echo $LATEST_STREAM_NAME
+
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
-          --log-stream-name "$LATEST_STREAM_NAME" \
+          --log-stream-name $LATEST_STREAM_NAME \
           --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
