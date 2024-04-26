@@ -33,10 +33,39 @@ jobs:
 
           # Push the Docker image to Amazon ECR
           docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
+
+  build_and_push_docker_image_us_east_2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials (us-east-2)
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - name: Login to Amazon ECR (us-east-2)
+        run: aws ecr get-login-password | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo
+
+      - name: Build and push Docker image (us-east-2)
+        run: |
+          # Build the Docker image
+          docker build -t k6-amd64-image .
+
+          # Tag the Docker image for ECR
+          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
+
+          # Push the Docker image to Amazon ECR
+          docker push 381491835787.dkr.ecr.us-east-2.amazonaws.com/k6-test-repo:latest-k6-amd64
   
   run_k6_tests_us_east_1:
     needs:
       - build_and_push_docker_image_us_east_1
+      - build_and_push_docker_image_us_east_2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
