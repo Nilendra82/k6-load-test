@@ -6,6 +6,34 @@ on:
       - main
      
 jobs:
+  build_and_push_docker_image_us_east_1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials (us-east-1)
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR (us-east-1)
+        run: aws ecr get-login-password | docker login --username AWS --password-stdin 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo
+
+      - name: Build and push Docker image (us-east-1)
+        run: |
+          # Build the Docker image
+          docker build -t k6-amd64-image .
+
+          # Tag the Docker image for ECR
+          docker tag k6-amd64-image:latest 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
+
+          # Push the Docker image to Amazon ECR
+          docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
+  
   run_k6_tests_us_east_1:
     runs-on: ubuntu-latest
     steps:
@@ -78,7 +106,7 @@ jobs:
           formatted_date=$(date -d "@$((timestamp / 1000))" +"%Y-%m-%d %H:%M:%S")
           
           # Print the formatted date
-          echo "Formatted Date: $formatted_date"
+          echo "K6 Test run on: $formatted_date"
 
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
