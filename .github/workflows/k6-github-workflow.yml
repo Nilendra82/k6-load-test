@@ -72,8 +72,15 @@ jobs:
           k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
 
       - name: Print Log Timestamp
-        run: echo "Timestamp - ${{ steps.get_log_events.outputs.log_event }}"
- 
+        run: |
+          timestamp=$(aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --log-stream-name ecs/k6-fargate-container/071baeddad4b4fb89af651d146d24ce5 \
+          --limit 1 \
+          --output json \
+          --region us-east-1 | jq -r '.events[0].timestamp')
+          echo "Timestamp: $timestamp"
+
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
         with:
