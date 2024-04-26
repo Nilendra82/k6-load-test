@@ -5,6 +5,9 @@ import http from 'k6/http';
 const usEast1VUs = parseInt(__ENV.US_EAST_1_VUS) || 30;
 const usEast2VUs = parseInt(__ENV.US_EAST_2_VUS) || 70;
 
+console.log('US_EAST_1_VUS:', usEast1VUs);
+console.log('US_EAST_2_VUS:', usEast2VUs);
+
 export const options = {
   vus: usEast1VUs + usEast2VUs, // Total VUs
   duration: '1m',
