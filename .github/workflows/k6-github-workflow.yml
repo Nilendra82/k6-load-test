@@ -231,7 +231,7 @@ jobs:
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
-          --output json > us-east-1-log-events.json
+          --output json > us-east-2-log-events.json
           cat us-east-2-log-events.json | jq -r '.events[].message' > us-east-2-k6-logs.json
           k6 run scripts/k6-script.js --out json=us-east-2-k6-logs.json
 
