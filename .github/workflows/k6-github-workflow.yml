@@ -151,7 +151,7 @@ jobs:
           --log-stream-name "$LATEST_STREAM_NAME" \
           --limit 1 \
           --output json \
-          | jq -r '.events[0].timestamp')
+          --reason us-east-1 | jq -r '.events[0].timestamp')
           
           # Print the timestamp of log stream
           echo "Timestamp: $timestamp"
