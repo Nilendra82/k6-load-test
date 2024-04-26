@@ -1,8 +1,9 @@
 import { check } from 'k6';
 import http from 'k6/http';
 
-const usEast1VUs = __ENV.US_EAST_1_VUS || 30;
-const usEast2VUs = __ENV.US_EAST_2_VUS || 70;
+// Read environment variables for the number of VUs for each region
+const usEast1VUs = parseInt(__ENV.US_EAST_1_VUS) || 30;
+const usEast2VUs = parseInt(__ENV.US_EAST_2_VUS) || 70;
 
 export const options = {
   vus: usEast1VUs + usEast2VUs, // Total VUs
