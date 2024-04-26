@@ -49,6 +49,7 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
+          # Get the latest log stream name
           latest_stream_name=$(aws logs describe-log-streams \
           --log-group-name k6-fargate-task-log \
           --order-by LastEventTime \
@@ -62,6 +63,17 @@ jobs:
 
           # Store the latest log stream name in a variable
           export LATEST_STREAM_NAME="$latest_stream_name"
+
+          # Get the timestamp of latest log stream name
+          timestamp=$(aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --log-stream-name "$LATEST_STREAM_NAME" \
+          --limit 1 \
+          --output json \
+          --region us-east-1 | jq -r '.events[0].timestamp')
+          
+          # Print the timestamp of log stream
+          echo "Timestamp: $timestamp"
 
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
