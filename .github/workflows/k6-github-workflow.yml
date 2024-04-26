@@ -35,6 +35,8 @@ jobs:
           docker push 381491835787.dkr.ecr.us-east-1.amazonaws.com/k6-test-repo:latest-k6-amd64
   
   run_k6_tests_us_east_1:
+    needs:
+      - build_and_push_docker_image_us_east_1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
