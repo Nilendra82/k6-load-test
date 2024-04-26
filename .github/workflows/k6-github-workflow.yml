@@ -85,9 +85,32 @@ jobs:
           aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
           sleep 20
 
+  run_k6_tests_us_east_2:
+    needs:
+      - build_and_push_docker_image_us_east_1
+      - build_and_push_docker_image_us_east_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - name: Run Fargate task in us-east-1
+        run: |
+          aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
+          aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
+          sleep 20
+
   generate_reports:
     needs: 
       - run_k6_tests_us_east_1
+      - run_k6_tests_us_east_2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -103,7 +126,6 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
 
       - name: Generate k6 Report for us-east-1
         run: |
@@ -151,3 +173,50 @@ jobs:
         with:
           name: k6-us-east-1-logs
           path: us-east-1-k6-logs.json
+
+      - name: Generate k6 Report for us-east-2
+        run: |
+          # Get the latest log stream name
+          latest_stream_name=$(aws logs describe-log-streams \
+          --log-group-name k6-fargate-task-log \
+          --order-by LastEventTime \
+          --descending \
+          --max-items 1 \
+          --query 'logStreams[0].logStreamName' \
+          --output text | tr -d '\n' | sed 's/None//g' | awk '{$1=$1};1')
+          
+          # Print the latest log stream name
+          echo "Latest log stream name: $latest_stream_name"
+
+          # Store the latest log stream name in a variable
+          export LATEST_STREAM_NAME="$latest_stream_name"
+
+          # Get the timestamp of latest log stream name
+          timestamp=$(aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --log-stream-name "$LATEST_STREAM_NAME" \
+          --limit 1 \
+          --output json \
+          | jq -r '.events[0].timestamp')
+          
+          # Print the timestamp of log stream
+          echo "Timestamp: $timestamp"
+
+          # Convert the timestamp to formatted date
+          formatted_date=$(date -d "@$((timestamp / 1000))" +"%Y-%m-%d %H:%M:%S")
+          
+          # Print the formatted date
+          echo "K6 Test run on: $formatted_date"
+
+          aws logs get-log-events \
+          --log-group-name k6-fargate-task-log \
+          --log-stream-name "$LATEST_STREAM_NAME" \
+          --output json > us-east-1-log-events.json
+          cat us-east-2-log-events.json | jq -r '.events[].message' > us-east-2-k6-logs.json
+          k6 run scripts/k6-script.js --out json=us-east-2-k6-logs.json
+
+      - name: Upload k6 logs artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: k6-us-east-2-logs
+          path: us-east-2-k6-logs.json
