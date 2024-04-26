@@ -6,7 +6,6 @@ on:
       - main
      
 jobs:
-
   run_k6_tests_us_east_1:
     runs-on: ubuntu-latest
     steps:
@@ -56,7 +55,7 @@ jobs:
           --descending \
           --max-items 1 \
           --query 'logStreams[0].logStreamName' \
-          --output text --region us-east-1 | tr -d '\n' | sed 's/None//g' | awk '{$1=$1};1')
+          --output text | tr -d '\n' | sed 's/None//g' | awk '{$1=$1};1')
           
           # Print the latest log stream name
           echo "Latest log stream name: $latest_stream_name"
@@ -70,30 +69,23 @@ jobs:
           --log-stream-name "$LATEST_STREAM_NAME" \
           --limit 1 \
           --output json \
-          --region us-east-1 | jq -r '.events[0].timestamp')
+          | jq -r '.events[0].timestamp')
           
           # Print the timestamp of log stream
           echo "Timestamp: $timestamp"
 
+          # Convert the timestamp to formatted date
+          formatted_date=$(date -d "@$((timestamp / 1000))" +"%Y-%m-%d %H:%M:%S")
+          
+          # Print the formatted date
+          echo "Formatted Date: $formatted_date"
+
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
-          --region us-east-1 \
           --output json > us-east-1-log-events.json
           cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
-
-      - name: Print Log Timestamp
-        run: |
-          timestamp=$(aws logs get-log-events \
-          --log-group-name k6-fargate-task-log \
-          --log-stream-name ecs/k6-fargate-container/071baeddad4b4fb89af651d146d24ce5 \
-          --limit 1 \
-          --output json \
-          --region us-east-1 | jq -r '.events[0].timestamp')
-          echo "Timestamp: $timestamp"
-          formatted_date=$(date -d "@$((timestamp / 1000))" +"%Y-%m-%d %H:%M:%S")
-          echo "Formatted Date: $formatted_date"
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
