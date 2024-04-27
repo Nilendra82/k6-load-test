@@ -23,7 +23,13 @@
                 "awslogs-region": "us-east-1",
                 "awslogs-stream-prefix": "ecs"
             }
-        }
+        },
+        "environment": [
+          {
+            "name": "US_EAST_1_VUS",
+            "value": "30"
+          }
+        ]
       }
     ],
     "requiresCompatibilities": [
