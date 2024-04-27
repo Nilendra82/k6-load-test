@@ -13,6 +13,7 @@ export const options = {
 export default function () {
   if (__VU < usEast1VUs) { // Check if current VU is less than usEast1VUs
     // VUs for us-east-1
+    console.log('Current VU for us-east-1', __VU);
     console.log('VU for us-east-1', usEast1VUs);
     const res = http.get('http://test.k6.io/');
     check(res, {
@@ -20,6 +21,8 @@ export default function () {
     });
   } else {
     // VUs for us-east-2
+    console.log('Current VU for us-east-1', __VU);
+    console.log('VU for us-east-1', usEast2VUs);
     const res = http.get('http://test.k6.io/');
     check(res, {
       'is status 200': (r) => r.status === 200,
