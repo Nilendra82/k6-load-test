@@ -25,10 +25,8 @@
             }
         },
         "environment": [
-          {
-            "name": "US_EAST_1_VUS",
-            "value": "30"
-          }
+          {"name": "REGION", "value": "us-east-1"},
+          {"name": "US_EAST_1_VUS", "value": "30"}
         ]
       }
     ],
