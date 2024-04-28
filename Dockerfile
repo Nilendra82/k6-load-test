@@ -15,4 +15,4 @@ RUN if [ "$REGION" = "us-east-1" ]; then \
     fi
 
 # Set up entrypoint to run k6 with the desired distribution
-ENTRYPOINT ["k6", "run", "--vus", "${K6_VUS}", "/scripts/k6-script2.js"]
+ENTRYPOINT ["k6", "run", "/scripts/k6-script.js"]

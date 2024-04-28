@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // Get the region from the environment variable
-const REGION = __ENV.REGION || 'us-east-1'; // Default to 'us-east-1' if not provided
+const REGION = __ENV.REGION || 'abcd'; // Default to 'us-east-1' if not provided
 
 let VUS = 10; // Default number of VUs
 
