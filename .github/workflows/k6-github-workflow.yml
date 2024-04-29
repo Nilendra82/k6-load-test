@@ -169,6 +169,14 @@ jobs:
           cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
 
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add reports/us-east-1-log-events.json reports/us-east-1-k6-logs.json
+          git commit -m "Add CloudWatch Logs and K6 Logs for us-east-1"
+          git push
+
       - name: Debug Output
         run: |
           pwd
