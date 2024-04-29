@@ -125,6 +125,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          token: ${{ secrets.PAT }}
           aws-region: us-east-1
 
       - name: Generate k6 Report for us-east-1
