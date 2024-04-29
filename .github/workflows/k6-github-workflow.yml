@@ -168,7 +168,7 @@ jobs:
           cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
 
-       - name: Debug Output
+      - name: Debug Output
         run: |
           pwd
           ls -la
