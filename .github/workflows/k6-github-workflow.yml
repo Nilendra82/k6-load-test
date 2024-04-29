@@ -164,15 +164,20 @@ jobs:
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
-          --output json > us-east-1-log-events.json
-          cat us-east-1-log-events.json | jq -r '.events[].message' > us-east-1-k6-logs.json
-          k6 run scripts/k6-script.js --out json=us-east-1-k6-logs.json
+          --output json > reports/us-east-1-log-events.json
+          cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
+          k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
+
+       - name: Debug Output
+        run: |
+          pwd
+          ls -la
 
       - name: Upload k6 logs artifact
         uses: actions/upload-artifact@v2
         with:
           name: k6-us-east-1-logs
-          path: us-east-1-k6-logs.json
+          path: reports/us-east-1-k6-logs.json
 
   generate_reports_for_us_east_2:
     needs: 
