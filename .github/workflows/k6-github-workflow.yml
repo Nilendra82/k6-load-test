@@ -161,6 +161,7 @@ jobs:
           # Print the formatted date
           echo "K6 Test run on: $formatted_date"
 
+          echo "REGION=us-east-1" >> $GITHUB_ENV
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
@@ -222,6 +223,7 @@ jobs:
           # Print the formatted date
           echo "K6 Test run on: $formatted_date"
 
+          echo "REGION=us-east-1" >> $GITHUB_ENV
           aws logs get-log-events \
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
