@@ -92,6 +92,7 @@ jobs:
           
           # Run the task definition
           aws ecs run-task --cluster k6-cluster --task-definition k6-fargate-task-definition --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-02c86683914e981ba],securityGroups=[sg-02c063e98df05c8fb],assignPublicIp=ENABLED}"
+          
           sleep 20
 
           # Deregister the task definition
@@ -113,11 +114,23 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: Run Fargate task in us-east-1
+      - name: Run Fargate task in us-east-2
         run: |
-          aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json
+          # Register the task definition and store the output in a variable
+          task_output=$(aws ecs register-task-definition --cli-input-json file://k6-fargate-task-definition2.json)
+
+          # Extract the task definition ARN from the output using jq
+          task_definition_arn=$(echo "$task_output" | jq -r '.taskDefinition.taskDefinitionArn')
+
+          # Print the task definition ARN
+          echo "Task Definition ARN: $task_definition_arn"
+          
           aws ecs run-task --cluster k6-cluster1 --task-definition k6-fargate-task-definition2 --count 1 --launch-type FARGATE --network-configuration "awsvpcConfiguration={subnets=[subnet-01f80be24e81f49ef],securityGroups=[sg-0f291a4776c0b19e6],assignPublicIp=ENABLED}"
+          
           sleep 20
+
+          # Deregister the task definition
+          aws ecs deregister-task-definition --task-definition "$task_definition_arn"
 
   generate_reports_for_us_east_1:
     needs: 
