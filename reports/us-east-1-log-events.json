@@ -1,0 +1,511 @@
+{
+    "events": [
+        {
+            "timestamp": 1716843268198,
+            "message": "          /\\      |‾‾| /‾‾/   /‾‾/   ",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843268198,
+            "message": "     /\\  /  \\     |  |/  /   /  /    ",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843268198,
+            "message": "    /  \\/    \\    |     (   /   ‾‾\\  ",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843268198,
+            "message": "   /          \\   |  |\\  \\ |  (‾)  | ",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843268198,
+            "message": "  / __________ \\  |__| \\__\\ \\_____/ .io",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271434,
+            "message": "  execution: local",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271434,
+            "message": "     script: /scripts/k6-script.js",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271434,
+            "message": "     output: -",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271434,
+            "message": "  scenarios: (100.00%) 1 scenario, 70 max VUs, 1m30s max duration (incl. graceful stop):",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271434,
+            "message": "           * default: 70 looping VUs for 1m0s (gracefulStop: 30s)",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271626,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271627,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271627,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271627,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271628,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271628,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271628,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271628,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271628,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271629,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271693,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271693,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271694,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271704,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271704,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271705,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271706,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271706,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271706,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271706,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271707,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271795,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843271893,
+            "message": "time=\"2024-05-27T20:54:31Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272435,
+            "message": "running (0m00.8s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272435,
+            "message": "default   [   1% ] 70 VUs  0m00.8s/1m0s",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272630,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272630,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272630,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272631,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272631,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272697,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272697,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272697,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272715,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272715,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272717,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272718,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272719,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843272797,
+            "message": "time=\"2024-05-27T20:54:32Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843273126
+        },
+        {
+            "timestamp": 1716843273435,
+            "message": "running (0m01.8s), 70/70 VUs, 33 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273435,
+            "message": "default   [   3% ] 70 VUs  0m01.8s/1m0s",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273633,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273633,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273654,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273700,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273718,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843273814,
+            "message": "time=\"2024-05-27T20:54:33Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274435,
+            "message": "running (0m02.8s), 70/70 VUs, 48 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274435,
+            "message": "default   [   5% ] 70 VUs  0m02.8s/1m0s",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274635,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274646,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274647,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274647,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274647,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274647,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274665,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843274743,
+            "message": "time=\"2024-05-27T20:54:34Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275435,
+            "message": "running (0m03.8s), 70/70 VUs, 55 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275435,
+            "message": "default   [   6% ] 70 VUs  0m03.8s/1m0s",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275661,
+            "message": "time=\"2024-05-27T20:54:35Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275662,
+            "message": "time=\"2024-05-27T20:54:35Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275662,
+            "message": "time=\"2024-05-27T20:54:35Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843275664,
+            "message": "time=\"2024-05-27T20:54:35Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276435,
+            "message": "running (0m04.8s), 70/70 VUs, 69 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276435,
+            "message": "default   [   8% ] 70 VUs  0m04.8s/1m0s",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276665,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276759,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276815,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276900,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276902,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276904,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843276917,
+            "message": "time=\"2024-05-27T20:54:36Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277010,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277017,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277103,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277435,
+            "message": "running (0m05.8s), 70/70 VUs, 86 complete and 0 interrupted iterations",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277435,
+            "message": "default   [  10% ] 70 VUs  0m05.8s/1m0s",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277650,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277656,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277668,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"http://test.k6.io/\\\": dial tcp 3.235.210.138:80: connect: connection refused\"",
+            "ingestionTime": 1716843278073
+        },
+        {
+            "timestamp": 1716843277733,
+            "message": "time=\"2024-05-27T20:54:37Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716843278073
+        }
+    ],
+    "nextForwardToken": "f/38286884482533776851764700301602894627083440144199647273/s",
+    "nextBackwardToken": "b/38286884269896171383775208641078845369163919672733138944/s"
+}
