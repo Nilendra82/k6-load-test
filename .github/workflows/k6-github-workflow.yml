@@ -254,5 +254,12 @@ jobs:
           --output json > reports/us-east-2-log-events.json
           cat reports/us-east-2-log-events.json | jq -r '.events[].message' > reports/us-east-2-k6-logs.json
           export REGION=us-east-2
-          k6 run scripts/k6-script.js --out json=reports/us-east-2-k6-logs2.json
+          k6 run scripts/k6-script.js --out json=reports/us-east-2-k6-logs.json
 
+      - name: Upload k6 results to S3 for us-east-1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+        run: |
+          aws s3 cp reports/results.json s3://k6s3bucket/reports/us-east-1-k6-logs.json
