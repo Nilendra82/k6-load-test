@@ -154,6 +154,7 @@ jobs:
 
       - name: Generate k6 Report for us-east-1
         run: |
+          mkdir -p reports
           # Get the latest log stream name
           latest_stream_name=$(aws logs describe-log-streams \
           --log-group-name k6-fargate-task-log \
@@ -193,6 +194,16 @@ jobs:
           cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
           export REGION=us-east-1
           k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
+
+      - name: Commit and Push K6 Report for us-east-1
+        run: |
+          git config --global user.email "krnilendra@gmail.com"
+          git config --global user.name "nilendra82"
+          git add reports/us-east-1-k6-logs.json
+          git commit -m "Add K6 test results for us-east-1"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload k6 results to S3 for us-east-1
         env:
