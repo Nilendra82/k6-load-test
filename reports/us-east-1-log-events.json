@@ -1,266 +1,386 @@
 {
     "events": [
         {
-            "timestamp": 1716845640320,
+            "timestamp": 1716846243715,
             "message": "          /\\      |‾‾| /‾‾/   /‾‾/   ",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845640320,
+            "timestamp": 1716846243715,
             "message": "     /\\  /  \\     |  |/  /   /  /    ",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845640320,
+            "timestamp": 1716846243715,
             "message": "    /  \\/    \\    |     (   /   ‾‾\\  ",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845640320,
+            "timestamp": 1716846243715,
             "message": "   /          \\   |  |\\  \\ |  (‾)  | ",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845640320,
+            "timestamp": 1716846243715,
             "message": "  / __________ \\  |__| \\__\\ \\_____/ .io",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845643641,
+            "timestamp": 1716846246667,
             "message": "  execution: local",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845643641,
+            "timestamp": 1716846246667,
             "message": "     script: /scripts/k6-script.js",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845643641,
+            "timestamp": 1716846246667,
             "message": "     output: -",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845643641,
+            "timestamp": 1716846246667,
             "message": "  scenarios: (100.00%) 1 scenario, 70 max VUs, 1m30s max duration (incl. graceful stop):",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845643641,
+            "timestamp": 1716846246667,
             "message": "           * default: 70 looping VUs for 1m0s (gracefulStop: 30s)",
-            "ingestionTime": 1716845645217
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845644828,
-            "message": "running (0m01.1s), 70/70 VUs, 0 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845645217
+            "timestamp": 1716846247844,
+            "message": "running (0m00.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845644828,
-            "message": "default   [   2% ] 70 VUs  0m01.1s/1m0s",
-            "ingestionTime": 1716845645217
+            "timestamp": 1716846247844,
+            "message": "default   [   1% ] 70 VUs  0m00.9s/1m0s",
+            "ingestionTime": 1716846248630
         },
         {
-            "timestamp": 1716845645643,
+            "timestamp": 1716846248844,
             "message": "running (0m01.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845645643,
+            "timestamp": 1716846248844,
             "message": "default   [   3% ] 70 VUs  0m01.9s/1m0s",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845646643,
-            "message": "running (0m02.9s), 70/70 VUs, 9 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845650162
+            "timestamp": 1716846249844,
+            "message": "running (0m02.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845646643,
+            "timestamp": 1716846249844,
             "message": "default   [   5% ] 70 VUs  0m02.9s/1m0s",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845647643,
-            "message": "running (0m03.9s), 70/70 VUs, 13 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845650162
+            "timestamp": 1716846250844,
+            "message": "running (0m03.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845647643,
+            "timestamp": 1716846250844,
             "message": "default   [   6% ] 70 VUs  0m03.9s/1m0s",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845648643,
-            "message": "running (0m04.9s), 70/70 VUs, 17 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845650162
+            "timestamp": 1716846251844,
+            "message": "running (0m04.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845648643,
+            "timestamp": 1716846251844,
             "message": "default   [   8% ] 70 VUs  0m04.9s/1m0s",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845649643,
-            "message": "running (0m05.9s), 70/70 VUs, 19 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845650162
+            "timestamp": 1716846252050,
+            "message": "time=\"2024-05-27T21:44:12Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845649643,
+            "timestamp": 1716846252059,
+            "message": "time=\"2024-05-27T21:44:12Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846253569
+        },
+        {
+            "timestamp": 1716846252844,
+            "message": "running (0m05.9s), 70/70 VUs, 1 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846253569
+        },
+        {
+            "timestamp": 1716846252844,
             "message": "default   [  10% ] 70 VUs  0m05.9s/1m0s",
-            "ingestionTime": 1716845650162
+            "ingestionTime": 1716846253569
         },
         {
-            "timestamp": 1716845650643,
-            "message": "running (0m06.9s), 70/70 VUs, 21 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845655163
+            "timestamp": 1716846253845,
+            "message": "running (0m06.9s), 70/70 VUs, 5 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845650643,
+            "timestamp": 1716846253845,
             "message": "default   [  11% ] 70 VUs  0m06.9s/1m0s",
-            "ingestionTime": 1716845655163
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845651642,
-            "message": "running (0m07.9s), 70/70 VUs, 24 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845655163
+            "timestamp": 1716846254845,
+            "message": "running (0m07.9s), 70/70 VUs, 5 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845651642,
+            "timestamp": 1716846254845,
             "message": "default   [  13% ] 70 VUs  0m07.9s/1m0s",
-            "ingestionTime": 1716845655163
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845652643,
-            "message": "running (0m08.9s), 70/70 VUs, 26 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845655163
+            "timestamp": 1716846255035,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845652643,
+            "timestamp": 1716846255044,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255046,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255049,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255052,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255057,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255059,
+            "message": "time=\"2024-05-27T21:44:15Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255844,
+            "message": "running (0m08.9s), 70/70 VUs, 5 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846255844,
             "message": "default   [  15% ] 70 VUs  0m08.9s/1m0s",
-            "ingestionTime": 1716845655163
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845653643,
-            "message": "running (0m09.9s), 70/70 VUs, 31 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845655163
+            "timestamp": 1716846256844,
+            "message": "running (0m09.9s), 70/70 VUs, 13 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845653643,
+            "timestamp": 1716846256844,
             "message": "default   [  16% ] 70 VUs  0m09.9s/1m0s",
-            "ingestionTime": 1716845655163
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845654643,
-            "message": "running (0m10.9s), 70/70 VUs, 39 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845655163
+            "timestamp": 1716846257844,
+            "message": "running (0m10.9s), 70/70 VUs, 13 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845654643,
+            "timestamp": 1716846257844,
             "message": "default   [  18% ] 70 VUs  0m10.9s/1m0s",
-            "ingestionTime": 1716845655163
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845655643,
-            "message": "running (0m11.9s), 70/70 VUs, 46 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845660162
+            "timestamp": 1716846258059,
+            "message": "time=\"2024-05-27T21:44:18Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
         },
         {
-            "timestamp": 1716845655643,
+            "timestamp": 1716846258068,
+            "message": "time=\"2024-05-27T21:44:18Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846258568
+        },
+        {
+            "timestamp": 1716846258844,
+            "message": "running (0m11.9s), 70/70 VUs, 16 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846258844,
             "message": "default   [  20% ] 70 VUs  0m11.9s/1m0s",
-            "ingestionTime": 1716845660162
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845656643,
-            "message": "running (0m12.9s), 70/70 VUs, 55 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845660162
+            "timestamp": 1716846259135,
+            "message": "time=\"2024-05-27T21:44:19Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845656643,
+            "timestamp": 1716846259845,
+            "message": "running (0m12.9s), 70/70 VUs, 20 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846259845,
             "message": "default   [  21% ] 70 VUs  0m12.9s/1m0s",
-            "ingestionTime": 1716845660162
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845657642,
-            "message": "running (0m13.9s), 70/70 VUs, 69 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845660162
+            "timestamp": 1716846260844,
+            "message": "running (0m13.9s), 70/70 VUs, 22 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845657642,
+            "timestamp": 1716846260844,
             "message": "default   [  23% ] 70 VUs  0m13.9s/1m0s",
-            "ingestionTime": 1716845660162
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845658642,
-            "message": "running (0m14.9s), 70/70 VUs, 74 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845660162
+            "timestamp": 1716846261044,
+            "message": "time=\"2024-05-27T21:44:21Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845658642,
+            "timestamp": 1716846261052,
+            "message": "time=\"2024-05-27T21:44:21Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846261055,
+            "message": "time=\"2024-05-27T21:44:21Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846261057,
+            "message": "time=\"2024-05-27T21:44:21Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846261074,
+            "message": "time=\"2024-05-27T21:44:21Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846261844,
+            "message": "running (0m14.9s), 70/70 VUs, 25 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846263568
+        },
+        {
+            "timestamp": 1716846261844,
             "message": "default   [  25% ] 70 VUs  0m14.9s/1m0s",
-            "ingestionTime": 1716845660162
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845659643,
-            "message": "running (0m15.9s), 70/70 VUs, 84 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845660162
+            "timestamp": 1716846262844,
+            "message": "running (0m15.9s), 70/70 VUs, 32 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845659643,
+            "timestamp": 1716846262844,
             "message": "default   [  26% ] 70 VUs  0m15.9s/1m0s",
-            "ingestionTime": 1716845660162
+            "ingestionTime": 1716846263568
         },
         {
-            "timestamp": 1716845660643,
-            "message": "running (0m16.9s), 70/70 VUs, 96 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845665162
+            "timestamp": 1716846263844,
+            "message": "running (0m16.9s), 70/70 VUs, 34 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845660643,
+            "timestamp": 1716846263844,
             "message": "default   [  28% ] 70 VUs  0m16.9s/1m0s",
-            "ingestionTime": 1716845665162
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845661643,
-            "message": "running (0m17.9s), 70/70 VUs, 104 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845665162
+            "timestamp": 1716846264067,
+            "message": "time=\"2024-05-27T21:44:24Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845661643,
+            "timestamp": 1716846264076,
+            "message": "time=\"2024-05-27T21:44:24Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846264844,
+            "message": "running (0m17.9s), 70/70 VUs, 36 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846264844,
             "message": "default   [  30% ] 70 VUs  0m17.9s/1m0s",
-            "ingestionTime": 1716845665162
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845662643,
-            "message": "running (0m18.9s), 70/70 VUs, 117 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845665162
+            "timestamp": 1716846265844,
+            "message": "running (0m18.9s), 70/70 VUs, 38 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845662643,
+            "timestamp": 1716846265844,
             "message": "default   [  31% ] 70 VUs  0m18.9s/1m0s",
-            "ingestionTime": 1716845665162
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845663643,
-            "message": "running (0m19.9s), 70/70 VUs, 121 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845665162
+            "timestamp": 1716846266844,
+            "message": "running (0m19.9s), 70/70 VUs, 43 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845663643,
+            "timestamp": 1716846266844,
             "message": "default   [  33% ] 70 VUs  0m19.9s/1m0s",
-            "ingestionTime": 1716845665162
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845664643,
-            "message": "running (0m20.9s), 70/70 VUs, 130 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845665162
+            "timestamp": 1716846267053,
+            "message": "time=\"2024-05-27T21:44:27Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
         },
         {
-            "timestamp": 1716845664643,
+            "timestamp": 1716846267061,
+            "message": "time=\"2024-05-27T21:44:27Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846267067,
+            "message": "time=\"2024-05-27T21:44:27Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846267070,
+            "message": "time=\"2024-05-27T21:44:27Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846267083,
+            "message": "time=\"2024-05-27T21:44:27Z\" level=warning msg=\"Request Failed\" error=\"Get \\\"https://test.k6.io/\\\": EOF\"",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846267845,
+            "message": "running (0m20.9s), 70/70 VUs, 45 complete and 0 interrupted iterations",
+            "ingestionTime": 1716846268568
+        },
+        {
+            "timestamp": 1716846267845,
             "message": "default   [  35% ] 70 VUs  0m20.9s/1m0s",
-            "ingestionTime": 1716845665162
+            "ingestionTime": 1716846268568
         }
     ],
-    "nextForwardToken": "f/38286937712405498676494385950437521219213461331367690249/s",
-    "nextBackwardToken": "b/38286937169984473212634039254752130351954353516291293184/s"
+    "nextForwardToken": "f/38286951164259603920563326900538904245023145224178827280/s",
+    "nextBackwardToken": "b/38286950626142622280019390471178462884346878930645483520/s"
 }
