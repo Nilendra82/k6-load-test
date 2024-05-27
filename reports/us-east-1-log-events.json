@@ -1,216 +1,266 @@
 {
     "events": [
         {
-            "timestamp": 1716845053749,
+            "timestamp": 1716845640320,
             "message": "          /\\      |‾‾| /‾‾/   /‾‾/   ",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845053749,
+            "timestamp": 1716845640320,
             "message": "     /\\  /  \\     |  |/  /   /  /    ",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845053749,
+            "timestamp": 1716845640320,
             "message": "    /  \\/    \\    |     (   /   ‾‾\\  ",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845053749,
+            "timestamp": 1716845640320,
             "message": "   /          \\   |  |\\  \\ |  (‾)  | ",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845053749,
+            "timestamp": 1716845640320,
             "message": "  / __________ \\  |__| \\__\\ \\_____/ .io",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845056816,
+            "timestamp": 1716845643641,
             "message": "  execution: local",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845056816,
+            "timestamp": 1716845643641,
             "message": "     script: /scripts/k6-script.js",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845056816,
+            "timestamp": 1716845643641,
             "message": "     output: -",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845056816,
+            "timestamp": 1716845643641,
             "message": "  scenarios: (100.00%) 1 scenario, 70 max VUs, 1m30s max duration (incl. graceful stop):",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845056816,
+            "timestamp": 1716845643641,
             "message": "           * default: 70 looping VUs for 1m0s (gracefulStop: 30s)",
-            "ingestionTime": 1716845058633
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845057902,
-            "message": "running (0m00.8s), 70/70 VUs, 0 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845058633
+            "timestamp": 1716845644828,
+            "message": "running (0m01.1s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845057902,
-            "message": "default   [   1% ] 70 VUs  0m00.8s/1m0s",
-            "ingestionTime": 1716845058633
+            "timestamp": 1716845644828,
+            "message": "default   [   2% ] 70 VUs  0m01.1s/1m0s",
+            "ingestionTime": 1716845645217
         },
         {
-            "timestamp": 1716845058816,
-            "message": "running (0m01.7s), 70/70 VUs, 3 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845645643,
+            "message": "running (0m01.9s), 70/70 VUs, 0 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845058816,
-            "message": "default   [   3% ] 70 VUs  0m01.7s/1m0s",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845645643,
+            "message": "default   [   3% ] 70 VUs  0m01.9s/1m0s",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845059816,
-            "message": "running (0m02.7s), 70/70 VUs, 73 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845646643,
+            "message": "running (0m02.9s), 70/70 VUs, 9 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845059816,
-            "message": "default   [   5% ] 70 VUs  0m02.7s/1m0s",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845646643,
+            "message": "default   [   5% ] 70 VUs  0m02.9s/1m0s",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845060817,
-            "message": "running (0m03.7s), 70/70 VUs, 141 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845647643,
+            "message": "running (0m03.9s), 70/70 VUs, 13 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845060817,
-            "message": "default   [   6% ] 70 VUs  0m03.7s/1m0s",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845647643,
+            "message": "default   [   6% ] 70 VUs  0m03.9s/1m0s",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845061816,
-            "message": "running (0m04.7s), 70/70 VUs, 211 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845648643,
+            "message": "running (0m04.9s), 70/70 VUs, 17 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845061816,
-            "message": "default   [   8% ] 70 VUs  0m04.7s/1m0s",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845648643,
+            "message": "default   [   8% ] 70 VUs  0m04.9s/1m0s",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845062817,
-            "message": "running (0m05.7s), 70/70 VUs, 281 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845649643,
+            "message": "running (0m05.9s), 70/70 VUs, 19 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845062817,
-            "message": "default   [  10% ] 70 VUs  0m05.7s/1m0s",
-            "ingestionTime": 1716845063583
+            "timestamp": 1716845649643,
+            "message": "default   [  10% ] 70 VUs  0m05.9s/1m0s",
+            "ingestionTime": 1716845650162
         },
         {
-            "timestamp": 1716845063817,
-            "message": "running (0m06.7s), 70/70 VUs, 351 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845650643,
+            "message": "running (0m06.9s), 70/70 VUs, 21 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845063817,
-            "message": "default   [  11% ] 70 VUs  0m06.7s/1m0s",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845650643,
+            "message": "default   [  11% ] 70 VUs  0m06.9s/1m0s",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845064817,
-            "message": "running (0m07.7s), 70/70 VUs, 421 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845651642,
+            "message": "running (0m07.9s), 70/70 VUs, 24 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845064817,
-            "message": "default   [  13% ] 70 VUs  0m07.7s/1m0s",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845651642,
+            "message": "default   [  13% ] 70 VUs  0m07.9s/1m0s",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845065816,
-            "message": "running (0m08.7s), 70/70 VUs, 491 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845652643,
+            "message": "running (0m08.9s), 70/70 VUs, 26 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845065816,
-            "message": "default   [  15% ] 70 VUs  0m08.7s/1m0s",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845652643,
+            "message": "default   [  15% ] 70 VUs  0m08.9s/1m0s",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845066817,
-            "message": "running (0m09.7s), 70/70 VUs, 561 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845653643,
+            "message": "running (0m09.9s), 70/70 VUs, 31 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845066817,
-            "message": "default   [  16% ] 70 VUs  0m09.7s/1m0s",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845653643,
+            "message": "default   [  16% ] 70 VUs  0m09.9s/1m0s",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845067817,
-            "message": "running (0m10.7s), 70/70 VUs, 631 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845654643,
+            "message": "running (0m10.9s), 70/70 VUs, 39 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845067817,
-            "message": "default   [  18% ] 70 VUs  0m10.7s/1m0s",
-            "ingestionTime": 1716845068643
+            "timestamp": 1716845654643,
+            "message": "default   [  18% ] 70 VUs  0m10.9s/1m0s",
+            "ingestionTime": 1716845655163
         },
         {
-            "timestamp": 1716845068816,
-            "message": "running (0m11.7s), 70/70 VUs, 701 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845655643,
+            "message": "running (0m11.9s), 70/70 VUs, 46 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845068816,
-            "message": "default   [  20% ] 70 VUs  0m11.7s/1m0s",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845655643,
+            "message": "default   [  20% ] 70 VUs  0m11.9s/1m0s",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845069816,
-            "message": "running (0m12.7s), 70/70 VUs, 771 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845656643,
+            "message": "running (0m12.9s), 70/70 VUs, 55 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845069816,
-            "message": "default   [  21% ] 70 VUs  0m12.7s/1m0s",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845656643,
+            "message": "default   [  21% ] 70 VUs  0m12.9s/1m0s",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845070816,
-            "message": "running (0m13.7s), 70/70 VUs, 841 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845657642,
+            "message": "running (0m13.9s), 70/70 VUs, 69 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845070816,
-            "message": "default   [  23% ] 70 VUs  0m13.7s/1m0s",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845657642,
+            "message": "default   [  23% ] 70 VUs  0m13.9s/1m0s",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845071818,
-            "message": "running (0m14.7s), 70/70 VUs, 911 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845658642,
+            "message": "running (0m14.9s), 70/70 VUs, 74 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845071818,
-            "message": "default   [  25% ] 70 VUs  0m14.7s/1m0s",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845658642,
+            "message": "default   [  25% ] 70 VUs  0m14.9s/1m0s",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845072817,
-            "message": "running (0m15.7s), 70/70 VUs, 981 complete and 0 interrupted iterations",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845659643,
+            "message": "running (0m15.9s), 70/70 VUs, 84 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845660162
         },
         {
-            "timestamp": 1716845072817,
-            "message": "default   [  26% ] 70 VUs  0m15.7s/1m0s",
-            "ingestionTime": 1716845073587
+            "timestamp": 1716845659643,
+            "message": "default   [  26% ] 70 VUs  0m15.9s/1m0s",
+            "ingestionTime": 1716845660162
+        },
+        {
+            "timestamp": 1716845660643,
+            "message": "running (0m16.9s), 70/70 VUs, 96 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845660643,
+            "message": "default   [  28% ] 70 VUs  0m16.9s/1m0s",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845661643,
+            "message": "running (0m17.9s), 70/70 VUs, 104 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845661643,
+            "message": "default   [  30% ] 70 VUs  0m17.9s/1m0s",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845662643,
+            "message": "running (0m18.9s), 70/70 VUs, 117 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845662643,
+            "message": "default   [  31% ] 70 VUs  0m18.9s/1m0s",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845663643,
+            "message": "running (0m19.9s), 70/70 VUs, 121 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845663643,
+            "message": "default   [  33% ] 70 VUs  0m19.9s/1m0s",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845664643,
+            "message": "running (0m20.9s), 70/70 VUs, 130 complete and 0 interrupted iterations",
+            "ingestionTime": 1716845665162
+        },
+        {
+            "timestamp": 1716845664643,
+            "message": "default   [  35% ] 70 VUs  0m20.9s/1m0s",
+            "ingestionTime": 1716845665162
         }
     ],
-    "nextForwardToken": "f/38286924514244670810909813872749457306070536462174388233/s",
-    "nextBackwardToken": "b/38286924089014061365327891791867871240073290545001922560/s"
+    "nextForwardToken": "f/38286937712405498676494385950437521219213461331367690249/s",
+    "nextBackwardToken": "b/38286937169984473212634039254752130351954353516291293184/s"
 }
