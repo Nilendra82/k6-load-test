@@ -199,6 +199,10 @@ jobs:
         run: |
           cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
 
+      - name: Verify conversion
+        run: |
+          cat reports/us-east-1-k6-logs.json
+
       - name: Run k6 on us-east-1
         run: |
           export REGION=us-east-1
