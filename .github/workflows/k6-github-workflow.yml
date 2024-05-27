@@ -194,9 +194,8 @@ jobs:
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
           --output json > reports/us-east-1-log-events.json
-          
-          cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
           export REGION=us-east-1
+          cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
           k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
 
       - name: Commit and Push K6 Report for us-east-1
