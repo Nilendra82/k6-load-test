@@ -237,8 +237,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Generate k6 Report for us-east-2
         run: |
+          mkdir -p reports
           # Get the latest log stream name
           latest_stream_name=$(aws logs describe-log-streams \
           --log-group-name k6-fargate-task-log \
@@ -277,7 +281,18 @@ jobs:
           --output json > reports/us-east-2-log-events.json
           cat reports/us-east-2-log-events.json | jq -r '.events[].message' > reports/us-east-2-k6-logs.json
           export REGION=us-east-2
-          k6 run scripts/k6-script.js --out json=reports/us-east-2-k6-logs.json
+          k6 run scripts/k6-script.js
+
+      - name: Commit and Push K6 Report for us-east-2
+        run: |
+          git config --global user.email "krnilendra@gmail.com"
+          git config --global user.name "nilendra82"
+          git add reports/us-east-2-log-events.json
+          git add reports/us-east-2-k6-logs.json
+          git commit -m "Add K6 test results for us-east-2"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload k6 results to S3 for us-east-2
         env:
