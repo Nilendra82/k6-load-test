@@ -155,6 +155,14 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
+      - name: Pull the repo for us-east-1
+        run: |
+          git config --global user.email "krnilendra@gmail.com"
+          git config --global user.name "nilendra82"
+          git pull
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Generate k6 Report for us-east-1
         run: |
           mkdir -p reports
@@ -239,6 +247,14 @@ jobs:
 
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Pull the repo for us-east-2
+        run: |
+          git config --global user.email "krnilendra@gmail.com"
+          git config --global user.name "nilendra82"
+          git pull
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate k6 Report for us-east-2
         run: |
