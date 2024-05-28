@@ -194,17 +194,7 @@ jobs:
           --log-group-name k6-fargate-task-log \
           --log-stream-name "$LATEST_STREAM_NAME" \
           --output json > reports/us-east-1-log-events.json
-          
-      - name: Convert logs to JSON
-        run: |
           cat reports/us-east-1-log-events.json | jq -r '.events[].message' > reports/us-east-1-k6-logs.json
-
-      - name: Verify conversion
-        run: |
-          cat reports/us-east-1-k6-logs.json
-
-      - name: Run k6 on us-east-1
-        run: |
           export REGION=us-east-1
           k6 run scripts/k6-script.js
 
