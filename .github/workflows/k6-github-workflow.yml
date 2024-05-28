@@ -206,7 +206,7 @@ jobs:
       - name: Run k6 on us-east-1
         run: |
           export REGION=us-east-1
-          k6 run scripts/k6-script.js --out json=reports/us-east-1-k6-logs.json
+          k6 run scripts/k6-script.js
 
       - name: Commit and Push K6 Report for us-east-1
         run: |
