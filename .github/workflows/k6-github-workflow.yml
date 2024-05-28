@@ -210,6 +210,7 @@ jobs:
         run: |
           git config --global user.email "krnilendra@gmail.com"
           git config --global user.name "nilendra82"
+          git pull
           git add reports/us-east-1-log-events.json
           git add reports/us-east-1-k6-logs.json
           git commit -m "Add K6 test results for us-east-1"
@@ -303,6 +304,7 @@ jobs:
         run: |
           git config --global user.email "krnilendra@gmail.com"
           git config --global user.name "nilendra82"
+          git pull
           git add reports/us-east-2-log-events.json
           git add reports/us-east-2-k6-logs.json
           git commit -m "Add K6 test results for us-east-2"
