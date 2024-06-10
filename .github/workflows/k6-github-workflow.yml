@@ -298,7 +298,7 @@ jobs:
           --output json > reports/us-east-2-log-events.json
           cat reports/us-east-2-log-events.json | jq -r '.events[].message' > reports/us-east-2-k6-logs.json
           export REGION=us-east-2
-          k6 run scripts/k6-script.js --out json=reports/us-east-2-k6-logs.json
+          k6 run scripts/k6-script.js
 
       - name: Commit and Push K6 Report for us-east-2
         run: |
