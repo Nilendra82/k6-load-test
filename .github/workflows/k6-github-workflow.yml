@@ -225,7 +225,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
         run: |
-          aws s3 cp reports/us-east-1-k6-logs.json s3://k6s3bucket/reports/us-east-1-k6-logs.json
+          aws s3 cp reports/us-east-1-k6-logs.json s3://k6s3bucket/reports/us-east-1-result.csv
 
   generate_reports_for_us_east_2:
     needs: 
@@ -320,4 +320,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
         run: |
-          aws s3 cp reports/us-east-2-k6-logs.json s3://k6s3bucket/reports/us-east-2-k6-logs.json
+          aws s3 cp reports/us-east-2-k6-logs.json s3://k6s3bucket/reports/us-east-2-result.csv
